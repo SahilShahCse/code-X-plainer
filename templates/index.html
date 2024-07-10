@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analyzer</title>
+    <style>
+        /* Basic Reset */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1e1e1e; /* Dark background for less eye strain */
+            color: #fff; /* White text color */
+        }
+
+        /* Centering the container */
+        .container {
+            background: rgba(39, 40, 34, 0.95); /* Dark background with a touch of transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+
+        /* Uniform Styling for Form Elements */
+        textarea, select, button {
+            width: 100%; /* Full width */
+            padding: 12px; /* Uniform padding */
+            margin: 8px 0; /* Uniform margin */
+            border: 1px solid #ccc; /* Standard border */
+            border-radius: 4px; /* Rounded corners */
+            box-sizing: border-box; /* Border and padding included in width */
+        }
+
+        textarea {
+            height: 300px; /* Increased height */
+            resize: none; /* Disable resizing */
+            color: #000; /* Text color for visibility */
+            background-color: #f8f8f8; /* Light background for text area */
+        }
+
+        button {
+            cursor: pointer;
+            color: white;
+            background-color: #007BFF;
+            border: none; /* Remove border for button */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Analyzer</h1>
+        <form action="/analyze" method="POST">
+            <label for="language">Select Language:</label>
+            <select name="language" id="language">
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+            </select>
+            <label for="code">Paste your code here:</label>
+            <textarea name="code" id="code" placeholder="Type or paste code here..."></textarea>
+            <button type="submit">Analyze Code</button>
+        </form>
+    </div>
+</body>
+</html>

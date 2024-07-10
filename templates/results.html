@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analysis Results</title>
+    <style>
+        /* Basic Reset */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1e1e1e; /* Dark background for less eye strain */
+            color: #fff; /* White text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Centering the container */
+        .container {
+            background: rgba(39, 40, 34, 0.95); /* Dark background with a touch of transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 95%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-size: 1.1em; /* Increased font size for better readability */
+        }
+
+        th, td {
+            padding: 16px; /* Increased padding for a better look */
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #666; /* Slightly lighter for visual depth */
+            color: #f0f0f0; /* For better readability */
+        }
+
+        td {
+            background-color: #2f2f2f; /* Slightly different background for rows to enhance readability */
+        }
+
+        a {
+            display: block; /* Make the link a block element to fill the container width */
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 0; /* Adjusted padding for better touch area */
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Analysis Results Of {{ language }}</h1>
+        <table>
+            <tr>
+                <th>Symbol</th>
+                <th>Description</th>
+            </tr>
+            {% for explanation in explanations %}
+            <tr>
+                <td>{{ explanation.split(':')[0] }}</td>
+                <td>{{ explanation }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Try Another Analysis</a>
+    </div>
+</body>
+</html>
